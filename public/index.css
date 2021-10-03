@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body {
+    background-color: #0F082C;
+}
+
+p,
+.MuiTypography-body1,
+.MuiTypography-h6,
+.MuiButton-label {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.MuiTypography-body1,
+.MuiTypography-h6,
+.MuiButton-label {
+    font-weight: bold !important;
+}
