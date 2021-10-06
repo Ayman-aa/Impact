@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Button, Grid} from '@material-ui/core';
 import useStyles from './HersoSectionStyles'
-import Shape from './images/Shape.svg'
+import Shape from '../images/Shape.svg'
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {

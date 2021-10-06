@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Partials/Header/Header'
 import HeroSection from '../Partials/HeroSection/HeroSection'
+import SecondSection from '../Partials/Second Section/SecondSection'
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
 
             <Header />
             <HeroSection />
+            <SecondSection />
 
         </div>
     )
