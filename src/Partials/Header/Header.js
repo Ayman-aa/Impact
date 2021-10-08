@@ -35,6 +35,7 @@ const Header = ({totalItems}) => {
         <List className={classes.list}>
           <ListItem><Typography component={Link} to='/blog' className={classes.listitem}>Blog</Typography></ListItem>
           <ListItem><Typography component={Link} to='/shop' className={classes.listitem}>Shop</Typography></ListItem>
+          <ListItem><IconButton component={Link} to='/cart' aria-label='Show cart items' className={classes.cart}><Badge badgeContent={totalItems} color='#0F082C'><ShoppingCart/></Badge></IconButton></ListItem>
         </List>
                            
         </Drawer>
