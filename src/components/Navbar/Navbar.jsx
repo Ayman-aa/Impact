@@ -1,34 +1,16 @@
 import React, { useState} from 'react';
-import { AppBar, IconButton, Toolbar, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
-import {  ShoppingCart } from '@material-ui/icons';
+import { AppBar, IconButton, Toolbar, Badge, Typography,Drawer,ListItem, List } from '@material-ui/core';
+import {  ShoppingCart,Menu,Close } from '@material-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 
-import useStyles from './NavbarStyles'
+import useStyles from './NavbarStyles'  
 
 
 const Navbar = ( { totalItems } ) => {
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
   const location = useLocation();
+  const [openDrawer, setOpenDrawer] = useState(true);
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-
-  const renderMobileMenu = (
-    <Menu anchorEl={mobileMoreAnchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} id={mobileMenuId} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right' }} open={isMobileMenuOpen} onClose={handleMobileMenuClose}>
-      <MenuItem>
-        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-          <Badge badgeContent={totalItems} color="secondary">
-            <ShoppingCart />
-          </Badge>
-        </IconButton>
-        <p>Cart</p>
-      </MenuItem>
-    </Menu>
-  );
      
 
     return (
@@ -40,20 +22,33 @@ const Navbar = ( { totalItems } ) => {
                       IMPACT
                   </Typography>
                   <div className={classes.grow} />
-                  {location.pathname === '/shop' && (
+                  
                   <div className={classes.button}>
-                      <Typography component={Link} to='/shop' variant='h6' color='#0F082C' className={classes.shop}>Shop</Typography>
-                       <IconButton component={Link} to='/cart' aria-label='Show cart items' className={classes.cart}>
-                           <Badge badgeContent={totalItems} color='#0F082C'>
+                      <Typography component={Link} to='/shop' variant='h6' color='#0F082C' className={classes.shop} onClick={()=>setOpenDrawer(!openDrawer)}>Shop</Typography>
+                      {location.pathname === '/shop' && ( <IconButton component={Link} to='/cart' aria-label='Show cart items' className={classes.cart} onClick={()=>setOpenDrawer(!openDrawer)}>
+                        <Badge badgeContent={totalItems} color='#0F082C' className={classes.Badge}>
                                <ShoppingCart/>
-                           </Badge>
-                       </IconButton>
+                        </Badge>
+                       </IconButton> )}
+                       
                   </div>
-                  )}
-
+                 
+                 <IconButton className={classes.menu} onClick={()=>setOpenDrawer(!openDrawer)}>
+                     <Menu className={classes.menuStyle}>  
+                     </Menu>
+               </IconButton>
               </Toolbar>
               </AppBar>  
-        {renderMobileMenu}
+              <Drawer anchor='right' open={!openDrawer} onClose={()=>setOpenDrawer(false)} className={classes.Drawer}> 
+                <List className={classes.list}>
+                     <ListItem>  <IconButton className={classes.closeBtn} onClick={()=>setOpenDrawer(!openDrawer)}> <Close></Close> </IconButton>  </ListItem>
+                     <ListItem><Typography component={Link} to='/blog' className={classes.listitem}>Blog</Typography></ListItem>
+                     <ListItem><Typography component={Link} to='/shop' className={classes.listitem}>Shop</Typography></ListItem>
+                     <ListItem><IconButton component={Link} to='/cart' aria-label='Show cart items' className={classes.cart}><Badge badgeContent={totalItems} color='#0F082C'><ShoppingCart/></Badge></IconButton></ListItem>
+                </List>
+                           
+        </Drawer>
+       
     </>
 
     )

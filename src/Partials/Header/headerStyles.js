@@ -44,12 +44,20 @@ export default makeStyles((theme) => ({
         color: '#ffffff',
     },
     list: {
-        marginTop: '10px'
+        marginTop: '30px'
     },
     listitem: {
         textDecoration: 'none',
         color: '#ffffff',
         display: 'block',
-        marginTop: '10px',
-    }
+        marginTop: '30px',
+    },
+    closeBtn: {
+        color: '#ffffff',
+        marginLeft: '70px',
+        position: 'absolute'
+    },
+    Drawer: {
+        [theme.breakpoints.up('sm')]: { display: 'none' }
+    },
 }));

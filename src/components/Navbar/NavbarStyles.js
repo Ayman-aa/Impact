@@ -50,6 +50,7 @@ export default makeStyles((theme) => ({
         color: '#0F082C',
         minWidth: '14%',
         paddingRight: '5px',
+        [theme.breakpoints.down('sm')]: { display: 'none' }
 
     },
     shop: {
@@ -57,42 +58,31 @@ export default makeStyles((theme) => ({
         color: '#0F082C',
     },
     cart: {
+        marginTop: '5px',
+        color: '#0F082C',
+        [theme.breakpoints.down('sm')]: { color: '#ffffff', }
+    },
+    menu: {
+        [theme.breakpoints.up('sm')]: { display: 'none' }
+    },
+    menuStyle: {
         color: '#0F082C',
     },
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing(2),
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 'auto',
-        },
+    list: {
+        marginTop: '20px'
     },
-    searchIcon: {
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+    listitem: {
+        textDecoration: 'none',
+        color: '#ffffff',
+        display: 'block',
+        marginTop: '30px',
     },
-    inputRoot: {
-        color: 'inherit',
+    closeBtn: {
+        color: '#ffffff',
+        marginLeft: '70px',
+        position: 'absolute'
     },
-    inputInput: {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
+    Drawer: {
+        [theme.breakpoints.up('sm')]: { display: 'none' }
     },
 }));
