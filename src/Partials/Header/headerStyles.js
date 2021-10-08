@@ -12,6 +12,10 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
         paddingRight: '7rem',
         paddingLeft: '6rem',
+        [theme.breakpoints.down('sm')]: {
+            paddingRight: '2rem',
+            paddingLeft: '2rem',
+        }
     },
     title: {
         textDecoration: 'none',
@@ -24,6 +28,7 @@ export default makeStyles((theme) => ({
         justifyContent: 'space-around',
         alignItems: 'center',
         minWidth: '212px',
+        [theme.breakpoints.down('xs')]: { display: 'none' }
     },
     navlinksTitle: {
         textDecoration: 'none',
@@ -32,4 +37,19 @@ export default makeStyles((theme) => ({
     cart: {
         color: '#ffffff',
     },
+    menu: {
+        [theme.breakpoints.up('sm')]: { display: 'none' }
+    },
+    menuStyle: {
+        color: '#ffffff',
+    },
+    list: {
+        marginTop: '10px'
+    },
+    listitem: {
+        textDecoration: 'none',
+        color: '#ffffff',
+        display: 'block',
+        marginTop: '10px',
+    }
 }));

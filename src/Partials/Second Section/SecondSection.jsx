@@ -8,10 +8,10 @@ const SecondSection = () => {
     const classes = useStyles();
     return (
         <Grid container justify='space-between' className={classes.container}>
-             <Grid item className={classes.leftSide}>
+             <Grid item className={classes.leftSide} xs={10} sm={5}>
                  <img src={Shape} alt='Second section shape' className={classes.svg} />
              </Grid>
-             <Grid item className={classes.rightSide}>
+             <Grid item className={classes.rightSide} xs={10} sm={5}>
                <Typography variant='h1' className={classes.heroTitle}>Whether if you are a gamer or video editor..We got your Back</Typography>
                <Typography variant='body1' className={classes.herodescription}>Best monitors with high frame rates, Best monitors with high frame rates </Typography>
                <Button  className={classes.exploreBtn} component={Link} to='/shop' >Explore</Button>

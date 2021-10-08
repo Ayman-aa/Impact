@@ -4,14 +4,23 @@ import { makeStyles } from "@material-ui/core";
 export default makeStyles((theme) => ({
     container: {
         alignItems: 'center',
-        padding: '6% 0% 0% 7.2%'
+        padding: '6% 0% 0% 7.2%',
+        [theme.breakpoints.down('xs')]: {
+            justify: 'center',
+        }
     },
     leftSide: {
         width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            minWidth: '80%',
+        }
     },
     rightSide: {
         width: '40%',
         height: '50%',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        }
     },
     heroTitle: {
         fontSize: '3rem',

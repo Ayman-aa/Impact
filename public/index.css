@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-body {
-    background-color: #0F082C;
+body,
+.MuiDrawer-paperAnchorRight {
+    background-color: #0F082C !important;
+}
+
+.MuiDrawer-paperAnchorRight {
+    width: 50% !important;
+    align-items: center !important;
 }
 
 * p,
