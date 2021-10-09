@@ -14,7 +14,7 @@ export default makeStyles((theme) => ({
         left: '50%',
         top: '0',
         transform: 'translateX(-50%)',
-
+        [theme.breakpoints.down('xs')]: { borderRadius: '0px' },
     },
     toolbar: {
         display: 'flex',

@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
     },
     rightSide: {
         width: '45%',
+        marginLeft: '2rem',
     },
     svg: {
         width: '95%'

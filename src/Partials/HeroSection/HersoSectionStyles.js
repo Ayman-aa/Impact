@@ -43,6 +43,11 @@ export default makeStyles((theme) => ({
     },
     buttons: {
         marginTop: '1rem',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column',
+            display: 'flex',
+            padding: '5px',
+        },
     },
     buttonE: {
         backgroundColor: '#8F2DC1',
@@ -50,6 +55,7 @@ export default makeStyles((theme) => ({
         color: '#ffffff',
         '&:hover': {
             backgroundColor: '#642685',
+            [theme.breakpoints.down('sm')]: { margin: '5px' }
         },
 
     },
